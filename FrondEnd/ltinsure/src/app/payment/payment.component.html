@@ -1,0 +1,58 @@
+<html>
+<head>
+    <title> LTI Insurance </title>   
+</head>
+    <body>
+
+            <img class="payment" src="..\assets\image\payment_background.png"  alt="">
+            <div class="login-box">
+        
+                <h1>Make Payment</h1>
+                <div><h3>Amount to be paid is</h3><h2><span style="color: #444444;text-align: center;"><b>₹{{plan_amount}}</b></span></h2></div>
+                <form name="form" (ngSubmit) = "f.form.valid && pay()" #f="ngForm" novalidate >
+<div class="form-group">
+                    <input class="form-control" #email="ngModel" type="text" id="email" [(ngModel)]=paymentDto.email name="email" placeholder="abc@xyz.." pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                    <div *ngIf="(f.submitted && email.invalid) || (email.dirty || email.touched)">
+                    <div *ngIf="email.errors?.required" class="alert alert-danger"> Email is required. </div>
+                    <div *ngIf="email.errors?.pattern" class="alert alert-danger"> Email is invalid. </div></div>
+</div>
+                    <!--<input type="text" name="amount" placeholder="Enter Amount" [(ngModel)] = paymentDto.amount/>-->
+                    <!--<input type="text" name="mode" placeholder="Enter Mode Of Payment" [(ngModel)] = paymentDto.modeOfPayment/>-->
+<div class="form-group">
+                    <select class="form-control" #mode="ngModel" name="mode" id="mode"  placeholder="Payment Mode" [(ngModel)]= paymentDto.modeOfPayment required>
+                       <!-- <option selected value="">Payment Mode</option>-->
+                        <option value="Debit Card" >Debit Card</option>
+                        <option value="Credit Card" >Credit Card</option>
+                    </select>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" #acc="ngModel" type="text" name="acc" placeholder="Enter Card Number" [(ngModel)] = paymentDto.accountNo required minlength="12">
+                        <div *ngIf="(f.submitted && acc.invalid) || (acc.dirty || acc.touched)" >
+                            <div *ngIf="acc.errors?.length" class="alert alert-danger"> Card Number is invalid. </div>
+                        <div *ngIf="acc.errors?.required" class="alert alert-danger"> Card Number is required. </div></div>
+                       </div>
+                       <div class="form-group">
+                        <input class="form-control" #contact="ngModel" type="tel" name="contact" placeholder="Enter Contact no." [(ngModel)] = paymentDto.contactNo required minlength="10" maxlength="10">
+                        <div *ngIf="(f.submitted && contact.invalid) || (contact.dirty || contact.touched)">
+                            <div *ngIf="contact.errors?.length" class="alert alert-danger"> Contact Number is invalid. </div>
+                            <div *ngIf="contact.errors?.required" class="alert alert-danger"> Contact Number is required. </div></div>
+</div> 
+<div class="form-group">
+                        <input class="form-control" #cvv="ngModel" type="password" name="cvv" placeholder="Enter CVV" [(ngModel)] = paymentDto.cvv required minlength="3" maxlength="3"/>
+                        <div *ngIf="(f.submitted && cvv.invalid) || (cvv.dirty || cvv.touched)">
+                            <div *ngIf="cvv.errors?.length" class="alert alert-danger"> CVV is invalid. </div>
+                            <div *ngIf="cvv.errors?.required" class="alert alert-danger"> CVV is required. </div></div>
+</div>
+                            
+
+                        <!--<div *ngIf=".errors.required" class="alert alert-danger"> Invalid CVV. </div>-->
+                
+                    <input type="submit" name="submit" value="Submit">
+                    </form>
+                <form>  <input type="submit" name="submit" value="Cancel" routerLink = "/home" routerLinkActive="active" /></form>
+                
+                </div>
+        
+       
+    </body>
+</html>

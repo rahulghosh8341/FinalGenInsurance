@@ -1,0 +1,100 @@
+<html>
+
+<head>
+    <title> LTI Insurance </title>
+</head>
+
+<body>
+    <div class="split">
+        <img class="registration-background" src="../assets/image/registration-background.png" alt="">
+        <div class="login-box">
+            <h1>Register</h1>
+            <form name="form" (ngSubmit)="register()" #f="ngForm" novalidate>
+                <input class="form-control" #name="ngModel" type="text" id="name" [(ngModel)]=customer.name name="name"
+                    placeholder="Your name.." required minlength="4" required>
+                <div *ngIf="(f.submitted && name.invalid) || (name.dirty || name.touched)">
+                    <div *ngIf="name.errors?.required" class="alert alert-danger"> Name is required. </div>
+                    <div *ngIf="name.errors?.minlength" class="alert alert-danger"> Name must be of more than 4 letters.
+                    </div>
+                </div>
+
+                <input class="form-control" #emailId="ngModel" type="text" id="emailId" [(ngModel)]=customer.emailId
+                    name="emailId" placeholder="abc@xyz.." pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                <div *ngIf="(f.submitted && emailId.invalid) || (emailId.dirty || emailId.touched)">
+                    <div *ngIf="emailId.errors?.required" class="alert alert-danger"> Email is required. </div>
+                    <div *ngIf="emailId.errors?.pattern" class="alert alert-danger"> Email is invalid. </div>
+                </div>
+
+                <input class="form-control" #dateOfBirth="ngModel" type="date" id="dob" [(ngModel)]=customer.dateOfBirth
+                    name="dob" placeholder="DD/MM/YY" required>
+                <div *ngIf="(f.submitted && dateOfBirth.invalid) || (dateOfBirth.dirty || dateOfBirth.touched)">
+                    <div *ngIf="dateOfBirth.errors?.required" class="alert alert-danger"> Date of birth is required.
+                    </div>
+                </div>
+
+
+                <input class="form-control" #contactNo="ngModel" type="text" id="tel" [(ngModel)]=customer.contactNo
+                    name="contact" placeholder="Enter your contact no" required minlength="10" required>
+                <div *ngIf="(f.submitted && contactNo.invalid) || (contactNo.dirty || contactNo.touched)">
+                    <div *ngIf="contactNo.errors?.minlength" class="alert alert-danger">Enter a 10 digit Contact No.
+                    </div>
+                    <div *ngIf="contactNo.errors?.required" class="alert alert-danger"> Contact No. is required. </div>
+                </div>
+
+                <input class="form-control" #pincode="ngModel" type="text" id="pincode" [(ngModel)]=customer.pincode
+                    name="pincode" placeholder="Enter your pinocde" required minlength="6" required maxlength="6"
+                    required>
+                <div *ngIf="(f.submitted && pincode.invalid) || (pincode.dirty || pincode.touched)">
+                    <div *ngIf="pincode.errors?.minlength" class="alert alert-danger">Minimum Length of Pincode should
+                        be 6</div>
+                    <div *ngIf="pincode.errors?.required" class="alert alert-danger"> Pincode is required. </div>
+                </div>
+
+                <input class="form-control" #city="ngModel" type="text" id="city" [(ngModel)]=customer.city name="city"
+                    placeholder="Enter your city" required>
+                <div *ngIf="(f.submitted && city.invalid) || (city.dirty || city.touched)">
+                    <div *ngIf="city.errors?.required" class="alert alert-danger"> City is required. </div>
+                </div>
+
+
+
+                <input class="form-control" #password="ngModel" type="password" id="password"
+                    [(ngModel)]=customer.password name="password" placeholder="Enter password" required minlength="5"
+                    required>
+                <div *ngIf="(f.submitted && password.invalid) || (password.dirty || password.touched)">
+                    <div *ngIf="password.errors?.minlength" class="alert alert-danger">Minimum Length of Password should
+                        be 5</div>
+                    <div *ngIf="password.errors?.required" class="alert alert-danger"> Password is required. </div>
+                </div>
+
+
+                <input class="form-control" #cpassword="ngModel" type="password" id="cpassword" name="cpassword"
+                    placeholder="Confirm password" required minlength="5" [(ngModel)]="confirmpassword"
+                    pattern="{{ password.value }}" required>
+                <div *ngIf="(f.submitted && cpassword.invalid) || (cpassword.dirty || cpassword.touched)">
+                    <div *ngif="cpassword.errors?.required" class="alert alert-danger">Confirm Password is required
+                    </div>
+
+                    <div *ngIf="cpassword.errors?.pattern" class="alert alert-danger">Confirm Password should match
+                        Password</div>
+
+                </div>
+
+                <input type="submit" name="submit" value="Register" [disabled]="!f.valid">
+
+                <!-- {{name.valid}}
+                {{emailId.valid}}
+                {{dateOfBirth.valid}}
+                {{contactNo.valid}}
+                {{pincode.valid}}
+                {{city.valid}}
+                {{password.valid}}
+                {{cpassword.valid}} -->
+
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

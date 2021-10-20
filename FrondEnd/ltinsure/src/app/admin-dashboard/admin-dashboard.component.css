@@ -1,0 +1,266 @@
+:root{
+    --white:white;
+    --black:black;
+    --orange:#ff8f00;
+    --darkblue:#100c63;
+    --blue:#5447C8; 
+    --seablue:#6559cd; 
+    --grey:#b3adb1;
+    --lightgrey:#f3f0f0;
+    --red:#d1410d;
+    --yellow:rgba(255, 255, 0, 0.87);
+    --brown:#594348;
+}
+
+*{
+    box-sizing: border-box;
+    margin:0px;    
+    background-color: transparent;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;    
+}
+
+ h2,h4,h5{
+    margin:1rem;
+}
+
+h3 , p{
+    font-size: 14px;
+    margin: .6rem;
+}
+span{
+    font-size: 12px;
+}
+
+
+ /* color */
+ 
+/* wrapper */
+
+.wrapper {
+    width:100%;
+    height: 90vh;
+    margin: auto;
+    margin-top: 9vh;
+
+    display: grid;
+    grid-template-areas: 
+    "sidebar profile profile profile"
+            "sidebar  details details details"
+                                   "sidebar information information information";
+                                   grid-template-rows: 1fr 1fr 1fr ;
+                                   grid-template-columns: 1fr repeat(3, 5fr);
+                               
+
+}
+
+/* wrapper end  */
+
+/* sidebar */
+
+
+/* profile */
+.profile{
+    grid-area: profile;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    background-image:linear-gradient(to right, white 60% , var(--lightgrey) 60%) ;
+    padding-top: .5rem;
+    height: 15vw;
+}
+
+.records{
+    grid-column: 1/4;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.records > div , .marks {
+    display: flex;   
+}
+
+
+.marks{
+    color: var(--grey)  ;
+    width: 175px;
+    height: 75px;
+      background-color: var(--lightgrey);
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    margin-right: .5rem;
+}
+
+
+
+.info{
+    grid-column:  4/6;  
+    justify-self: center;
+    text-align: center;
+    padding: .6rem 0 0 0;   
+    line-height: 1.5;
+ 
+}
+
+
+.profilepic{
+    width:80px;
+    height: 80px;
+    border-radius: 80px;
+    object-fit: cover;
+}
+
+/* profile end */
+
+/* detail css start */
+.details{
+    grid-area: details ;
+    display: grid;
+    grid-template-columns: repeat(5,1fr) ;
+    overflow: visible;
+     grid-template-rows: 290px;
+     background-image:linear-gradient(to right, white 60% , var(--lightgrey) 60%) ;
+    
+}
+
+.history{
+    grid-column: 1/3;
+   display: flex;
+   flex-direction: column;
+   padding-top: .6rem;  
+}
+
+.list{
+    display: flex;
+padding-bottom: .5em;    
+}
+
+.b-bottom{
+    margin-bottom: .6em;
+    border-bottom: 1px solid #efefef;
+}
+
+.list-detail {
+    display: flex;
+    flex:4;
+    flex-direction: column;
+    align-items: flex-start;
+ 
+}
+
+ .list-detail p {
+    margin:.2em;
+    color:var(--grey)
+} 
+
+.list-detail p:nth-child(1), .score span{
+    font-weight: 700;   
+    color:black;
+}
+
+.pic{
+    width:50px;
+    height: 50px;
+    border-radius: 10px;
+    object-fit: cover;
+    align-items: center;
+    margin: 0 .5em;
+}
+
+.education{
+    grid-column: 3/5;
+    text-align: center;
+    overflow: visible;
+    z-index: 3;
+}
+
+.education> span{
+  margin-left:100px;
+}
+.todo{
+    display: flex;
+    font-size: 12px;
+    padding: 1em ;
+    border-radius: 20px;
+    margin:.5rem 0  0 1rem ;
+     text-align: left;
+     height: 260px;
+     width:450px;
+    box-shadow: 21px 25px 35px -9px rgba(102,102,102,0.52);
+}
+
+.today{
+flex:2;
+padding-left: .5em;
+
+}
+
+.todo ul{
+  list-style-type: none;
+  padding: .5em;
+   background-color: var(--seablue);
+  margin:.5em
+}
+.todo ul li{
+    font-size: 12px;
+    margin: .8em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tomarrow{
+    flex:1;
+    align-self: flex-end;
+}
+
+.notification{
+    grid-column: 5/6;
+   font-size: 12px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around; 
+   padding-top: 2rem;
+}
+
+.notification .message{
+    width: 200px;
+    height: 120px;
+    border:1px solid var(--black);
+     padding: .7rem;
+    text-align: center;
+   border-radius: 1rem;
+}
+
+
+
+
+button {
+  background-color: #008CBA;; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-size: 10px;
+}
+
+.btn-green:hover {
+  background-color: #4CAF50;;
+  color: white;
+}
+.btn-red:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+
+
+

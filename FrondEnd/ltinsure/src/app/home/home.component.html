@@ -1,0 +1,324 @@
+<!--==========================
+    Intro Section
+  ============================-->
+  <section class='comp'>
+ <span><h1>=</h1></span>
+ <span><h4>=</h4></span>
+    <div class="container1">
+  <div class="product-card">
+    <div class="product-img img-one"></div>
+    <div class="product-text">
+      <h3 id='heading'>Buy Insurance</h3>
+      <p id='para'>Purchase the vehicle insurance as per your preferred plan.</p>
+    </div>
+    <div class="product-cart">
+      <button type="submit"><a (click)="checkSessionBuy()" target="_blank" rel="noopener">Know More</a></button>
+    </div>
+  </div>
+  <div class="product-card">
+    <div class="product-img img-two"></div>
+    <div class="product-text">
+      <h4 id='heading'>Renew Insurance</h4>
+      <p id='para'>Check and renew your vehicle insurance before it gets expired.</p>
+    </div>
+    <div class="product-cart">
+      <button type="submit"><a  (click)="checkSessionRenew()" target="_blank" rel="noopener">Know More</a></button>
+    </div>
+  </div>
+  
+  <div class="product-card" style='border-color: black;'>
+    <div class="product-img img-three"></div>
+    <div class="product-text">
+      <h3 id='heading'>Calculate Claim</h3>
+      <p id='para'>Determine the amount that you can claim for your vehicle insurance plan.</p>
+    </div>
+    <div class="product-cart">
+      <button type="submit"><a (click)="checkSessionCalculate()" target="_blank" rel="noopener">Know More</a></button>
+    </div>
+  </div>
+   <div class="product-card">
+    <div class="product-img img-four"></div>
+    <div class="product-text">
+      <h4 id='heading'>Claim Insurance</h4>
+      <p id='para'>Claim the vehicle insurance that we have covered for you in your plan.</p>
+    </div>
+    <div class="product-cart">
+      <button type="submit"><a (click)="checkSessionClaim()" target="_blank" rel="noopener">Know More</a></button>
+    </div>
+  </div>
+</div>
+</section>
+<section
+  id="intro"
+  style="background-image: url(../assets/image/background.jpg)"
+  class="clearfix wow fadeInUp"
+>
+  <div class="container">
+    <h1>&nbsp;</h1>
+    <div class="float-container1">
+      <main>
+        <h4 class="text-light" style="text-align: center">
+          Why Insurance?
+        </h4>
+
+        <p class="text-light" style="font-size: 20px">
+          Accidents and disasters can and do happen. If you aren’t flush with
+          cash to handle them, you could face huge financial struggles and
+          setbacks. Insurance is one way to protect your life, your health, your
+          ability to earn an income, and to keep a roof over your head when
+          things go wrong.
+        </p>
+
+        <p class="text-right">
+          <a
+            [routerLink]="'/contact'"
+            routerLinkActive="active"
+            target="_blank"
+            class="btn btn-primary py-3 px-4 mr-3"
+            >Know More</a
+          >
+        </p>
+      </main>
+    </div>
+  </div>
+</section>
+<!-- #intro -->
+<!--==========================
+      Blog Section
+    ============================-->
+<section id="blog" class="wow fadeInUp section-bg">
+  <div class="container">
+    <header class="section-header">
+      <h3>Related articles</h3>
+    </header>
+    <div class="row flex-items-xs-middle flex-items-xs-center">
+      <div class="col-xs-12 col-lg-4">
+        <div class="card">
+          <div class="card-block img-fluid">
+            <a href="#">
+              <img
+                src="../assets/image/img6.jpg"
+                alt="Image"
+                class="img-fluid"
+              />
+            </a>
+            <h6>&nbsp;</h6>
+            <h4 class="card-title">
+              What Claims Are Covered By Comprehensive Coverage?
+            </h4>
+            <a
+              href="https://www.thebalance.com/comprehensive-insurance-coverage-2645753"
+              target="_blank"
+              class="btn"
+              >Read Now</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-lg-4">
+        <div class="card">
+          <div class="card-block img-fluid">
+            <a href="#">
+              <img
+                src="../assets/image/img7.jpg"
+                alt="Image"
+                class="img-fluid"
+              />
+            </a>
+            <h6>&nbsp;</h6>
+            <h4 class="card-title">
+              How Long Does an Insurance Claim Take?
+            </h4>
+            <a
+              href="https://www.thebalance.com/how-long-does-an-insurance-claim-take-527095"
+              target="_blank"
+              class="btn"
+              >Read Now</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-lg-4">
+        <div class="card">
+          <div class="card-block img-fluid">
+            <a href="#">
+              <img
+                src="../assets/image/img5.jpg"
+                alt="Image"
+                class="img-fluid"
+              />
+            </a>
+            <h6>&nbsp;</h6>
+            <h4 class="card-title">
+              What to Do After a Total Loss Auto Accident?
+              <br>
+              <br>
+            </h4>
+            <a
+              href="https://www.thebalance.com/what-to-do-after-a-total-loss-auto-accident-527138"
+              target="_blank"
+              class="btn"
+              >Read Now</a
+            >
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+<!-- #blog -->
+<hr>
+<!--==========================
+    Footer
+  ============================-->
+<footer id="footer" class="section-bg">
+  <div class="footer-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="footer-info">
+                <h1>LTI Insurance</h1>
+                <p>
+                  Your one stop solution for all the insurance needs.
+                </p>
+              </div>
+              <div class="footer-newsletter">
+                <h4>Our Newsletter</h4>
+                <p>
+                  Sign up to our newsletter to be informed with all the latest
+                  schemes and policies.
+                </p>
+                <form action="" method="post">
+                  <input type="email" name="email" /><input
+                    type="submit"
+                    value="Subscribe"
+                  />
+                </form>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="footer-links">
+                <h4>Useful Links</h4>
+                <ul>
+                  <li><a href="">Terms and conditions</a></li>
+                  <li><a href="">Privacy policy</a></li>
+                  <li><a href="">Copyright policy</a></li>
+                  <li><a href="#">Terms of service</a></li>
+                </ul>
+              </div>
+              <div class="footer-links">
+                <h4>Contact Us</h4>
+                <p>
+                  1-1/32 Parker view apts <br />
+                  Hyderabad, 500049<br />
+                  India <br />
+                  <strong>Phone:</strong> +91 2238671113<br />
+                  <strong>Email:</strong> info@ltinsure.com<br />
+                </p>
+              </div>
+              <div class="social-links">
+                <a
+                  href=""
+                  class="twitter"
+                  target="_blank"
+                  ><i class="fa fa-twitter"></i
+                ></a>
+                <a
+                  href=""
+                  class="facebook"
+                  target="_blank"
+                  ><i class="fa fa-facebook"></i
+                ></a>
+                <a
+                  href=""
+                  class="instagram"
+                  target="_blank"
+                  ><i class="fa fa-instagram"></i
+                ></a>
+                <a
+                  href=""
+                  class="linkedin"
+                  target="_blank"
+                  ><i class="fa fa-linkedin"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="form">
+            <h4>Send us a message</h4>
+            <p>Have any queries or requests? Drop a mail.</p>
+            <form action="" method="post" role="form" class="contactForm">
+              <div class="form-group">
+                <input
+                  type="text"
+                  name="name"
+                  class="form-control"
+                  id="name"
+                  placeholder="Your Name"
+                  data-rule="minlen:4"
+                  data-msg="Please enter at least 4 chars"
+                />
+                <div class="validation"></div>
+              </div>
+              <div class="form-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  name="email"
+                  id="email"
+                  placeholder="Your Email"
+                  data-rule="email"
+                  data-msg="Please enter a valid email"
+                />
+                <div class="validation"></div>
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="subject"
+                  id="subject"
+                  placeholder="Subject"
+                  data-rule="minlen:4"
+                  data-msg="Please enter at least 8 chars of subject"
+                />
+                <div class="validation"></div>
+              </div>
+              <div class="form-group">
+                <textarea
+                  class="form-control"
+                  name="message"
+                  rows="5"
+                  data-rule="required"
+                  data-msg="Please write something for us"
+                  placeholder="Message"
+                ></textarea>
+                <div class="validation"></div>
+              </div>
+
+              <div id="sendmessage">Your message has been sent. Thank you!</div>
+              <div id="errormessage"></div>
+              <div class="text-center">
+                <button type="submit" title="Send Message">Send Message</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="copyright">
+      &copy; Copyright <strong>LTI Insurance</strong>. All Rights
+      Reserved
+    </div>
+  </div>
+</footer>
+<!-- #footer -->
+
+<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>

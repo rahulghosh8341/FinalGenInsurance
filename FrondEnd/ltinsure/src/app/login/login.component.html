@@ -1,0 +1,37 @@
+<html>
+
+<head>
+    <title> LTI Insurance </title>
+</head>
+
+<body>
+    <div class="split">
+        <img class="registration-background" src="../assets/image/login-background.png" alt="">
+        <div class="login-box">
+            <h1>Login </h1>
+            <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+                
+                <p>Email</p>
+                <input class="form-control" #email="ngModel" type="email" [(ngModel)]=loginDto.email name="email"
+                    placeholder="" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                <div *ngIf="(f.submitted && email.invalid) && (email.dirty || email.touched)">
+                    <div *ngIf="email.errors?.required" class="alert alert-danger"> Email is required. </div>
+                    <div *ngIf="email.errors?.pattern" class="alert alert-danger"> Email is invalid. </div>
+                </div>
+
+                <p>Password</p>
+                <input class="form-control" #password="ngModel" type="password" [(ngModel)]=loginDto.password
+                    name="password" placeholder="" required>
+                <div *ngIf="(f.submitted && password.invalid) && (password.dirty || password.touched)">
+                    <div *ngIf="password.errors?.required" class="alert alert-danger"> Password is required. </div>
+                </div>
+
+                <input type="submit" name="submit" value="Login" [disabled]="!f.valid">
+                <a routerLink="/forgetPassword" routerLinkActive="active">Forgot Password</a><br />
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

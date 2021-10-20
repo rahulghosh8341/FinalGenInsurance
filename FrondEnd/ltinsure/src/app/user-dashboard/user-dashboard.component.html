@@ -1,0 +1,205 @@
+<div class="app-container">
+  <div class="app-content">
+    <div class="projects-section">
+      <div class="projects-section-header">
+        <p>Statistics</p>
+        <p class="time">{{ formattedDate }}</p>
+      </div>
+      <div class="projects-section-line">
+        <div class="projects-status">
+          <div class="item-status">
+            <span class="status-number">5</span>
+            <span class="status-type">Insurance Policies</span>
+          </div>
+          <div class="item-status">
+            <span class="status-number">2</span>
+            <span class="status-type">Policies Renewed</span>
+          </div>
+          <div class="item-status">
+            <span class="status-number">3</span>
+            <span class="status-type">Claims Made</span>
+          </div>
+        </div>
+        <div class="view-actions">
+          <button class="view-btn list-view" title="List View">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-list"
+            >
+              <line x1="8" y1="6" x2="21" y2="6" />
+              <line x1="8" y1="12" x2="21" y2="12" />
+              <line x1="8" y1="18" x2="21" y2="18" />
+              <line x1="3" y1="6" x2="3.01" y2="6" />
+              <line x1="3" y1="12" x2="3.01" y2="12" />
+              <line x1="3" y1="18" x2="3.01" y2="18" />
+            </svg>
+          </button>
+          <button class="view-btn grid-view active" title="Grid View">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-grid"
+            >
+              <rect x="3" y="3" width="7" height="7" />
+              <rect x="14" y="3" width="7" height="7" />
+              <rect x="14" y="14" width="7" height="7" />
+              <rect x="3" y="14" width="7" height="7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <br />
+      <br /><br />
+      <div class="projects-section-header">
+        <p>Policies</p>
+      </div>
+      <!-- <div *ngIf="noPolicies"><h4>No Policies Available!</h4></div> -->
+      <div class="project-boxes jsGridView" *ngFor="let p of policies">
+        <div class="project-box-wrapper" *ngIf="id == p.customer.id">
+          <div>
+            <div class="project-box">
+              <div class="project-box-header">
+                <span></span>
+              </div>
+              <div class="project-box-content-header">
+                <p class="box-content-header">
+                  <b style="font-size: larger"
+                    ><span  style="color: black;padding-right: 15px;">Policy no:</span><span style="color: black;font-size: larger;"
+                      >{{ p.id }}<br /> </span
+                  ></b>
+                  
+                  <b>
+                    Vehicle model:
+                    <span style="color: #666e70"
+                      >{{ p.vehicle.model }} </span></b
+                  ><br />
+                  <b>
+                    Registration no:
+                    <span style="color: #666e70"
+                      >{{ p.vehicle.registrationNo }} </span></b
+                  ><br />
+                  <b
+                    >Claim amount:<span style="color: #666e70"
+                      >{{ p.policyAmount }}<br /> </span
+                  ></b>
+                </p>
+              </div>
+
+              <div class="project-box-footer">
+                <div
+                  class="days-left"
+                  style="color: #096c86; text-align: center"
+                >
+                  {{ p.duration }} Years Plan
+                </div>
+                <p>
+                  <button type= 'button' class='btn btn-primary btn-sm'>
+                    <a
+                      style="color: white"
+                      routerLink="/claimInsurance/{{ p.policyAmount }}"
+                      routerLinkActive="active"
+                      >Claim</a
+                    >
+                  </button>
+                  <span>&nbsp;</span>
+                  <span
+                    ><button type= 'button' class='btn btn-primary btn-sm'>
+                      <a
+                        style="color: white"
+                        routerLink="/renew"
+                        routerLinkActive="active"
+                        >Renew</a
+                      >
+                    </button></span
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<hr>
+ <div class="projects-section-header">
+        <p>Claim History</p>
+      </div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Claim Id</th>
+      <th scope="col">Claim Amount</th>
+      <th scope="col">Reason</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let po of approvedClaim">
+      <th scope="row" *ngIf="id == po.customer.id">{{po.id}}</th>
+      <td *ngIf="id == po.customer.id">{{po.amount}}</td>
+      <td *ngIf="id == po.customer.id">{{po.reason}}</td>
+      <td *ngIf="id == po.customer.id">{{po.status}}</td>
+    </tr>
+    <tr *ngFor="let npo of notApprovedClaim">
+      <th scope="row" *ngIf="id == npo.customer.id">{{npo.id}}</th>
+      <td *ngIf="id == npo.customer.id">{{npo.amount}}</td>
+      <td *ngIf="id == npo.customer.id">{{npo.reason}}</td>
+      <td *ngIf="id == npo.customer.id">{{npo.status}}</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+      
+    </div>
+
+    <div class="messages-section">
+      <div class="projects-section-header">
+        <p>Welcome! {{ name }}</p>
+      </div>
+      <div class="messages">
+        <div class="message-box">
+           <div class="" style='margin: auto;'>
+        <h3>Planning to buy a Insurance?</h3>
+        <button type="button" class="btn btn-primary">
+          <a
+            style="color: white"
+            routerLink="/buyInsurance"
+            routerLinkActive="active"
+            >Buy Insurance</a
+          >
+        </button>
+      </div>
+        </div>
+        <div class="message-box">
+          <div class="message-content">
+            <div class="message-header">
+              <div class="name">User Details</div>
+            </div>
+            <p class="message-line" style="font-size: medium;">
+              User-Id: {{id}}<br>
+              Name : {{name}}
+            </p>
+            <p class="message-line time">Updated on {{ formattedDate2 }}</p>
+             <!-- <p>
+              <button>Generate pdf</button>
+            </p> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

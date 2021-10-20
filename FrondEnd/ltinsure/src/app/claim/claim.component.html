@@ -1,0 +1,50 @@
+<html>
+<head>
+    <title> LTI Insurance </title>   
+</head>
+    <body>
+        <img class="registration-background" src="../assets/image/claim_background.png" alt="">
+    <div class="login-box">
+        <h2 style="text-align: center;"> Claim Insurance </h2>
+        <h1>Max Claim Amount:<b>₹{{maxAmt}}</b></h1>
+        <form name="form" (ngSubmit) = "f.form.valid && claimInsurance()" #f="ngForm" novalidate>
+                
+            <label for="claimDate">Claim Date:</label>
+            <input class="form-control" #claimDate="ngModel" type="Date" id="claimDate" [(ngModel)]=claim.date name="claimDate" placeholder="" required>
+                <div *ngIf="(f.submitted && claimDate.invalid) || claimDate.touched">
+                <div *ngIf="claimDate.errors?.required" class="alert alert-danger"> Claim Date is required. </div></div>
+
+                
+            <label for="amount">Claim Amount: </label>
+            <input class="form-control" #claimAmount="ngModel" type="number" id="claimAmount" [(ngModel)]=claim.amount name="claimAmount" placeholder="" required>
+                <div *ngIf="(f.submitted && claimAmount.invalid) || claimAmount.touched">
+                <div *ngIf="claimAmount.errors?.required"class="alert alert-danger"> Claim Amount is required. </div></div>
+        
+            <label for="contact">Mobile number</label>
+            <input class="form-control" #contact="ngModel" type="number" id="contact" [(ngModel)]=claim.contactNo name="contact" placeholder="" required>
+                <div *ngIf="(f.submitted && contact.invalid) || contact.touched">
+                <div *ngIf="contact.errors?.required" class="alert alert-danger"> Contact is required. </div></div>
+
+            <label for="pno">Policy ID</label>
+            <input class="form-control" #policyId="ngModel" type="number" id="policyId" [(ngModel)]=claim.policyId name="policyId" placeholder="" required>
+                <div *ngIf="(f.submitted && policyId.invalid) || policyId.touched">
+                <div *ngIf="policyId.errors?.required" class="alert alert-danger"> Policy ID is required. </div></div>
+            
+            <label for="reason">Reason to claim:</label>
+            <select name="reason" id="reason" [(ngModel)] = claim.reason>
+                <option value="Natural Disaster">Natural disaster</option>
+                <option value="Manmade Disaster">Man made disaster</option>
+                 <option value="Road Accident">Road accident</option>
+                <option value="Theft">Theft</option>
+            </select>
+            
+        <input type="submit" value="Claim Insurance" />
+        </form>
+        <div style="text-align: center;">
+        <button  value="Home Page" class = "btn btn-primary"><a href="http://localhost:4200/userDashboard">Home Page</a></button>
+</div>
+        
+        </div>
+    
+    </body>
+</html>

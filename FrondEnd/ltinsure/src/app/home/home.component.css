@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
+
+html{
+  box-sizing: border-box;
+  font: 62.5% "Noto Sans JP", sans-serif;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+h3#heading, p#para {
+  margin: 0;
+  padding-bottom: .5em;
+}
+
+h3 #heading{
+  font-size: 1.2em;
+}
+
+p #para{
+  font-size: 1em;
+  font-weight: 300;
+}
+
+.container1 {
+
+  padding-top: 8%;
+  padding-bottom: 3%;
+  background-color: #d5dfee;
+  font-size: 1.0em;
+  margin: 0;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* PRODUCT CARD */
+
+.product-card {
+  background-color: #f5f6fa;
+  border-radius: 10px;
+  color: #2f3640;
+  margin: 0 2em;
+  transition: all linear .2s;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-card:hover,
+.product-card:active {
+  box-shadow: .2em .5em .5em rgba(0, 0, 0, 0.4);
+  transform: scale(1.1);
+}
+
+.product-img {
+  border-radius: 10px 10px 0 0;
+  height: 150px;
+  max-width: 100%;
+}
+
+.img-one {
+  background-image: url(/assets/image/img1.jpg);
+}
+
+.img-two {
+  background-image: url(/assets/image/img2.jpg);
+}
+
+.img-three {
+  background-image: url(/assets/image/img3.jpg);
+}
+.img-four {
+  background-image: url(/assets/image/img4.jpg);
+}
+
+.img-one,
+.img-two,
+.img-three,
+.img-four {
+  background-size: cover;
+  background-position: center;
+}
+
+.product-text {
+  padding: 1em;
+  text-align: center;
+}
+
+.product-cart button{
+  border: 0;
+  border-radius: 0 0 10px 10px;
+  color: #f5f6fa;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 1em;
+  text-transform: uppercase;
+  transition: all linear .3s;
+  width: 100%;
+}
+
+.product-cart button:hover {
+  font-weight: 500;
+  letter-spacing: .1em;
+}
+
+/* color */
+.product-card:first-child h3 {
+  color: #0097e6;
+}
+
+.product-card:first-child button {
+  background-color: #0097e6;
+}
+
+.product-card:nth-child(2) h4 {
+  color: #0097e6;
+}
+
+.product-card:nth-child(2) button {
+  background-color: #0097e6;
+}
+
+.product-card:nth-child(3) h3 {
+  color: #0097e6;
+}
+
+.product-card:nth-child(3) button {
+  background-color: #0097e6;
+}
+.product-card:last-child h4 {
+  color: #0097e6;
+}
+
+.product-card:last-child button {
+  background-color: #0097e6;
+}
+
+/* media queries */
+@media screen and (max-width: 860px) {
+  .container {
+    display: grid;
+    grid-column-templates: 1fr;
+    grid-auto-rows: auto;
+  }
+  
+  .product-card {
+    margin: 1.5em;
+  }
+}

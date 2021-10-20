@@ -1,0 +1,23 @@
+<head>
+    <title> LTI Insurance </title>
+</head>
+
+<body>
+    <div class="split">
+        <img class="otp-background" src="../assets/image/otp-background.png" alt="">
+        <div class="login-box">
+            <!-- <img src="../assets/image/avatar.png" class="avatar"> -->
+            <h1>Forget Password </h1>
+            <form (ngSubmit)="verifyOtp()" #f="ngForm" novalidate>
+                <p>OTP</p>
+                <input type="text" name="otp" #oneTime="ngModel" [(ngModel)]=otp placeholder="" required minlength="6">
+                <div *ngIf="(oneTime.invalid) && (oneTime.dirty || oneTime.touched)">
+                    <div *ngIf="oneTime.errors?.required" class="alert alert-danger"> OTP is required. </div>
+                    <div *ngIf="oneTime.errors?.minlength" class="alert alert-danger">OTP is of 6 digit</div>
+                </div>
+                <input type="submit" name="submit" value="Submit" [disabled]="!f.valid">
+            </form>
+        </div>
+    </div>
+
+</body>

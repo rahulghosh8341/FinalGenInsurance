@@ -1,0 +1,91 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>LTI Insurance</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- profile -->
+      <section class="profile">
+        <div class="records" style="position: relative; top: 24px">
+          <h2>Statistics</h2>
+          <div>
+            <div class="marks">
+              <h1 class="orange">{{ customerCount }}</h1>
+              <p>Customers</p>
+            </div>
+            <div class="marks">
+              <h1 class="blue">{{ renewCount }}</h1>
+              <p>Renewed</p>
+            </div>
+            <div class="marks">
+              <h1 class="orange">{{ claimCount }}</h1>
+              <p>Claim<br />tickets</p>
+            </div>
+          </div>
+        </div>
+        <div class="info" style="position: relative; top: 10%">
+          <img class="profilepic" src="../assets/image/admin.png" alt="" />
+          <h2>
+            Welcome! <br />
+            {{ name }}<br />
+          </h2>
+        </div>
+      </section>
+      <section class="details">
+        <div class="history">
+          <h2>Claim Tickets:</h2><br>
+          <div class="list b-bottom" *ngFor="let d of data">
+            <div *ngIf="d" class="list-detail">
+              <h3>
+                Policy No: <b>{{ d.policyId }}</b>
+              </h3>
+              <h3>
+                Name:&emsp;<b>{{ d.customer.name }}</b>
+              </h3>
+
+              <h3>
+                Amount:&emsp;<b>{{ d.amount }}</b>
+              </h3>
+              <h3>
+                Reason: <b>{{ d.reason }}</b>
+              </h3>
+              <h3>
+                Contact No: <b>{{ d.contactNo }}</b>
+              </h3>
+
+            </div>
+
+            <p>
+              <button
+                class="btn btn-success"
+                (click)="statusUpdate(d.id, 'Approved')"
+              >
+                Approve
+              </button>
+              <span
+                ><button
+                  class="btn btn-danger"
+                  (click)="statusUpdate(d.id, 'Not Approved')"
+                >
+                  Deny
+                </button></span
+              >
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

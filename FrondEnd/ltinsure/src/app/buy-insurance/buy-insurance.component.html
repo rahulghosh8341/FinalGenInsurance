@@ -1,0 +1,56 @@
+<html>
+<head>
+    <title> LTI Insurance </title>   
+</head>
+    <body>
+        <img class="registration-background" src="../assets/image/buy-insurance_background.png" alt="">
+    <div class="login-box" style='margin-top:50px;'>
+        <h1>Buy Insurance</h1>
+            <form name="form" (ngSubmit) = "f.form.valid && buyInsurance()" #f="ngForm" novalidate>
+                <input class="form-control" #vehicleType="ngModel" type="text" id="vehicleType" [(ngModel)]=vehicle.type name="vehicleType" placeholder="Vehicle Type">
+                    <div *ngIf="(f.submitted && vehicleType.invalid) || vehicleType.touched">
+                    <div *ngIf="vehicleType.errors?.required"> This Field is required. </div></div>
+
+                <input class="form-control" #manufacturer="ngModel" type="text" id="manufacturer" [(ngModel)]=vehicle.manufacture name="manufacturer" placeholder="Manufacturer">
+                    <div *ngIf="(f.submitted && manufacturer.invalid) || manufacturer.touched">
+                    <div *ngIf="manufacturer.errors?.required"> This Field is required. </div></div>
+
+                <input class="form-control" #model="ngModel" type="text" id="model" [(ngModel)]=vehicle.model name="model" placeholder="Vehicle Model">
+                    <div *ngIf="(f.submitted && model.invalid) || model.touched">
+                    <div *ngIf="model.errors?.required"> This Field is required. </div></div>
+
+                <input class="form-control" #drivingLicense="ngModel" type="text" id="drivingLicense" [(ngModel)]=vehicle.drivingLicense name="drivingLicense" placeholder="Driving License">
+                    <div *ngIf="(f.submitted && drivingLicense.invalid) || drivingLicense.touched">
+                    <div *ngIf="drivingLicense.errors?.required"> This Field is required. </div></div>
+
+                <input class="form-control" #purchaseDate="ngModel" type="text" id="purchaseDate" [(ngModel)]=vehicle.purchaseDate name="purchaseDate" placeholder="Purchase Date" onfocus="(this.type='date')">
+                    <div *ngIf="(f.submitted && purchaseDate.invalid) || purchaseDate.touched">
+                    <div *ngIf="purchaseDate.errors?.required"> This Field is required. </div></div>
+
+                <input class="form-control" #rNo="ngModel" type="text" id="rNo" [(ngModel)]=vehicle.registrationNo name="rNo" placeholder="Registration No">
+                    <div *ngIf="(f.submitted && rNo.invalid) || rNo.touched ">
+                    <div *ngIf="rNo.errors?.required"> This Field is required. </div></div>
+                
+                <input class="form-control" #eNo="ngModel" type="text" id="eNo" [(ngModel)]=vehicle.engineNo name="eNo" placeholder="Engine No">
+                    <div *ngIf="(f.submitted && eNo.invalid) || eNo.touched">
+                    <div *ngIf="eNo.errors?.required"> This Field is required. </div></div>
+                    
+                <input class="form-control" #cNo="ngModel" type="text" id="cNo" [(ngModel)]=vehicle.chassisNo name="cNo" placeholder="Chassis No">
+                    <div *ngIf="(f.submitted && cNo.invalid) || cNo.touched">
+                    <div *ngIf="cNo.errors?.required"> This Field is required. </div></div>
+
+                <input class="form-control" #eType="ngModel" type="text" id="eType" [(ngModel)]=vehicle.engineType name="eType" placeholder="Engine Type">
+                    <div *ngIf="(f.submitted && eType.invalid) || eType.touched">
+                    <div *ngIf="eType.errors?.required"> This Field is required. </div></div>
+
+                <input class="form-control" #lastRenew="ngModel" type="text" id="lastRenew" [(ngModel)]=vehicle.lastRenewDate name="lastRenew" placeholder="Last Renew Date" onfocus="(this.type='date')">
+                    <div *ngIf="(f.submitted && lastRenew.invalid) || lastRenew.touched">
+                    <div *ngIf="lastRenew.errors?.required"> This Field is required. </div></div>
+
+            <input type="submit" name="submit" value="Submit">
+            </form>
+            <input type="submit" name="submit" value="Homepage" [routerLink] = "'/home'">
+        
+        </div>
+    </body>
+</html>
